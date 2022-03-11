@@ -10,6 +10,6 @@ namespace DataAccess.Abstract
         // Bütün Ürünleri Listeler
         void GetAllProduct();
 
-
+        List<Product> GetAllProductList();
     }
 }

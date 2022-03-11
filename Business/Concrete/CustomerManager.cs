@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 
 namespace Business.Concrete
@@ -24,6 +25,11 @@ namespace Business.Concrete
         {
             // Bütün müşterilerin bulunduğu listeyi verir
             return _customerDal.GetAllCustomers();
+        }
+
+        public bool GetCustomerByIdentityNo(string identityNo)
+        {
+            return _customerDal.GetCustomerByIdentityNo(identityNo);
         }
     }
 }

@@ -8,13 +8,12 @@ namespace ConsoleUI
     {
         public bool ValidateCustomer(string identityNo, string name, string surname)
         {
-            if ((identityNo.Length == 11) && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(surname))
+            if ((identityNo.Length == 11) && !string.IsNullOrEmpty(identityNo) && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(surname))
             {
                 return true;
             }
             else
             {
-                Console.WriteLine($"Hatalı Bilgi Girişi");
                 return false;
             }
             

@@ -14,12 +14,12 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product>
             {
-                new Product{ProductID = 1, ProductName="Ülker Çikolatalı Gofret",UnitPrice=3},
-                new Product{ProductID = 2, ProductName="Çaykur Altın Süzme Poşet Çay",UnitPrice=8},
-                new Product{ProductID = 3, ProductName="ETİ Form Kepekli Bisküvi",UnitPrice=6},
-                new Product{ProductID = 4, ProductName="Ülker ÇOKOPRENS",UnitPrice=10},
-                new Product{ProductID = 5, ProductName="Bioblas Botanic Oils Şampuan",UnitPrice=25},
-                new Product{ProductID = 6, ProductName="Cafex Sıcak Çikolata",UnitPrice=13}
+                new Product{ProductID = 0, ProductName="Ülker Çikolatalı Gofret",UnitPrice=3},
+                new Product{ProductID = 1, ProductName="Çaykur Altın Süzme Poşet Çay",UnitPrice=8},
+                new Product{ProductID = 2, ProductName="ETİ Form Kepekli Bisküvi",UnitPrice=6},
+                new Product{ProductID = 3, ProductName="Ülker ÇOKOPRENS",UnitPrice=10},
+                new Product{ProductID = 4, ProductName="Bioblas Botanic Oils Şampuan",UnitPrice=25},
+                new Product{ProductID = 5, ProductName="Cafex Sıcak Çikolata",UnitPrice=13}
             };
         }
 
@@ -31,7 +31,13 @@ namespace DataAccess.Concrete.InMemory
                 Console.WriteLine($"[{_products[i].ProductID}] {_products[i].ProductName} {_products[i].UnitPrice} TL");
             }
             Console.WriteLine("\n");
-            Console.WriteLine($"Seçmek istediğiniz ürünün numarasını giriniz [1-{_products.Count}]");
+            Console.WriteLine($"Alışverişi Tamamlamak İçin 't' Tuşuna Basınız");
+            Console.Write($"Seçmek istediğiniz ürünün numarasını giriniz [1-{_products.Count}] : ");
+        }
+
+        public List<Product> GetAllProductList()
+        {
+            return _products;
         }
     }
 }

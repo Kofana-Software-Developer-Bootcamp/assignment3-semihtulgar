@@ -10,5 +10,6 @@ namespace Entities.Concrete
         public int ID { get; set; }
         public int CustomerID { get; set; }
         public List<Product> ListOfProducts { get; set; }
+        public int TotalPrice { get; set; }
     }
 }

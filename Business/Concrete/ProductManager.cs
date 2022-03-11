@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,9 +16,14 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        public void GetAll()
+        public void GetAllProduct()
         {
             _productDal.GetAllProduct();            
+        }
+
+        public List<Product> GetAllProductList()
+        {
+            return _productDal.GetAllProductList();
         }
     }
 }

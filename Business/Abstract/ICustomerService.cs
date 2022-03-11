@@ -10,5 +10,7 @@ namespace Business.Abstract
         void AddCustomer(Customer customer);
 
         List<Customer> GetAllCustomers();
+
+        bool GetCustomerByIdentityNo(string identityNo);
     }
 }

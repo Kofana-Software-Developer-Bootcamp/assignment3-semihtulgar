@@ -10,5 +10,7 @@ namespace DataAccess.Abstract
         void Add(ShoppingReceipt shoppingReceipt);
 
         void ListShoppingReceipt();
+
+        List<ShoppingReceipt> GetShoppingReceiptsList();
     }
 }
