@@ -104,6 +104,7 @@ namespace ConsoleUI
 
                     // Alışveriş listesinde ürünleri tutacak olan liste
                     List<Product> products = new List<Product>();
+                    int totalPrice = 0;
 
                     do
                     {
@@ -127,8 +128,22 @@ namespace ConsoleUI
                                 bool productExist = productManager.GetAllProductList().Exists(product => product.ProductID == outChosenProduct);
                                 if (productExist)
                                 {
-                                    // Ürünü Sepete Ekle
-                                    products.Add(productManager.GetAllProductList().Find(p => p.ProductID == outChosenProduct));
+                                    Console.Write("Ürün Adetini Giriniz : ");
+                                    int amountOfProdcut;
+                                    parseResult = int.TryParse(Console.ReadLine(), out amountOfProdcut);
+
+                                    if (parseResult == true)
+                                    {
+                                        totalPrice += (amountOfProdcut * (productManager.GetAllProductList().Find(p => p.ProductID == outChosenProduct)).UnitPrice);
+                                        // Ürünü Sepete Ekle
+                                        products.Add(productManager.GetAllProductList().Find(p => p.ProductID == outChosenProduct));
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"Geçerli Bir Ürün Miktarı Giriniz!");
+                                    }
+
+                                    
                                 }
                                 else
                                 {
@@ -151,7 +166,8 @@ namespace ConsoleUI
                             {
                                 ID = shoppingReceiptManager.GetShoppingReceiptsList().Count + 1,
                                 CustomerID = customers.Find(c => c.IdentityNo == identityNo).CustomerID,
-                                ListOfProducts = products
+                                ListOfProducts = products,
+                                TotalPrice = totalPrice
                             });
 
                             shoppingReceiptManager.ListShoppingReceipt();

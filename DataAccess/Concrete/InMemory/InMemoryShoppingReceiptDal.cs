@@ -35,12 +35,13 @@ namespace DataAccess.Concrete.InMemory
 
             // Alışveriş fişini yazdırır
             Console.WriteLine("\n\n");
-            Console.WriteLine("---> Alışveriş Fişi <---");
+            Console.WriteLine("----> Alışveriş Fişi <----");
             Console.WriteLine($"Fiş No : {shoppingReceipt.ID}");
             for (int i = 0; i < shoppingReceipt.ListOfProducts.Count; i++)
             {
-                Console.WriteLine($"[{i}] - {shoppingReceipt.ListOfProducts[i].ProductName} ** {shoppingReceipt.ListOfProducts[i].UnitPrice} TL");
+                Console.WriteLine($"[{i}] --- {shoppingReceipt.ListOfProducts[i].ProductName} ---- {shoppingReceipt.ListOfProducts[i].UnitPrice} TL");
             }
+            Console.WriteLine($"Toplam Fiyat : {shoppingReceipt.TotalPrice}"); 
             Console.WriteLine("\n\n");
         }
     }
